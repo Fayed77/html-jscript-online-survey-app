@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<title>Create a survey</title>
+		<style>
+			div.underline { padding-bottom: 5 px; margin-bottom: 5 px; border-bottom: 1px solid gray; }
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-sm-12">
+				<div id="auth">
+					<div class="well">
+					<p>This application requires a secure sign in. Please log in below.</p>
+					<fieldset>
+						<legend>Secure sign in</legend>
+						<label for="user" class="control-label col-sm-2">User:</label>
+						<div class="col-sm-10"><input type="text" class="form-control" id="user" /></div>
+						<label for="password" class="control-label col-sm-2">Password:</label>
+						<div class="col-sm-10"><input type="password" class="form-control" id="password" /></div>
+						<div class="col-sm-offset-2 col-sm-10"><button id="new" class="btn btn-primary">Create Account</button><button id="login" class="btn btn-primary">Log In</button></div>
+					</fieldset>
+					</div>
+				</div>
+				<div id="one">
+					<h3 class="text-warning">Step One</h3>
+					<p>Fill in the form below with the details of your survey and click create.</p>
+					<div class="well">
+					<fieldset>
+						<legend>Set up a survey</legend>
+						<label for="title" class="control-label col-sm-2">Title:</label>
+						<div class="col-sm-10"><input type="text" class="form-control" id="title" /></div>
+						<label for="intro" class="control-label col-sm-2">Introduction:</label>
+						<div class="col-sm-10"><input type="text" class="form-control" id="intro" /></div>
+						<div class="col-sm-offset-2 col-sm-10"><button id="create" class="btn btn-primary">Create</button></div>
+					</fieldset>
+					</div>
+				</div>
+				<div id="two">
+					<h3 class="text-warning">Step Two</h3>
+					<p>Next, use the form below to construct survey questions. In the response field you can
+				       enter a comma separated list of potential responses, or leave the response field blank
+					   to allow free responses to a question.</p>
+					<p>When you are done constructing questions, click the Done button to upload your survey to
+					   to the server.</p>
+					<div class="well">
+					<fieldset>
+						<legend>Set up a question</legend>
+						<label for="question" class="control-label col-sm-2">Question:</label>
+						<div class="col-sm-10"><input type="text" class="form-control" id="question" /></div>
+						<label for="responses" class="control-label col-sm-2">Responses:</label>
+						<div class="col-sm-10"><input type="text" class="form-control" id="responses" /></div>
+						<div class="col-sm-offset-2 col-sm-10"><button id="add" class="btn btn-primary">Add Question</button>
+							<button id="done" class="btn btn-primary">Done</button></div>
+					</fieldset>
+					</div>
+					<div id="questions">
+					</div>
+				</div>
+				<div id="three">
+					<h3 class="text-warning">Step Three</h3>
+					<p>Your survey has been uploaded.</p>
+					<p>The URL that users will use to access your survey is <span id="survey_url"></span>.</p>
+					<p>You will be able to view survey results at the URL <span id="results_url"></span>.</p>
+				</div>
+			</div>
+        <script src="postSurvey.js"></script>
+		</div>
+	</body>
+</html>
